@@ -8,7 +8,21 @@
  */
 module.exports = function( ceiling ) {
   // do work here
+  var resultNumber = 1;
 
+  // Returns true if n is evenly divisible by all the numbers between 1 and ceiling
+  function allDivisible (n, ceiling) {
+  	for (var i = 1; i <= ceiling; i++) {
+  		if (n % i !== 0) {
+  			return false
+  		}
+  	}
+  	return true
+  }
 
-  return 0;
+  while (!allDivisible(resultNumber, ceiling)) {
+  	resultNumber = resultNumber + 1;
+  }
+
+  return resultNumber;
 };
